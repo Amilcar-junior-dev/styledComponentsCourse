@@ -1,9 +1,13 @@
 import React from 'react';
 import {View} from 'react-native';
-import { Container } from './styles';
+import { Clone, Container,Container2, Retangulo } from './styles';
 
 export const ExempleComponent = ()=> {
     return (
-        <Container />
+        <Container>
+            <Retangulo />
+            <Clone />
+        </Container>
+        // <Container2 />
     )
 };
