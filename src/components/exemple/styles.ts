@@ -22,7 +22,7 @@ export const Retangulo = styled.View`
     width: 90%;
     height: 50px;
     margin-top: 30px;
-    background-color: blue;
+    background-color: blue;  
 `;
 
 export const Clone = styled(Retangulo)`
@@ -30,4 +30,42 @@ export const Clone = styled(Retangulo)`
     background-color: red;
     height: 30px;
 `;
+export const CliqueMe2 = styled.TouchableOpacity.attrs(()=>({
+    activeOpacity: 0,
+}))`
+    min-width:40%;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: cyan;
+    margin-top: 20px;
+    padding: 10px;
+`;
+export const CliqueMe1 = styled.TouchableOpacity.attrs(()=>{
+    return {
+        activeOpacity: 0.5
+    }
+} )`
+    min-width:40%;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: cyan;
+    margin-top: 20px;
+    padding: 10px;
+`;
+export const CliqueMe = styled.TouchableOpacity.attrs(function(){
+    return {
+        activeOpacity: 0
+    }
+})`
+    min-width:40%;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: cyan;
+    margin-top: 20px;
+    padding: 10px;
+`;
+
 
