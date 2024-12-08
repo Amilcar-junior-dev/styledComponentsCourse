@@ -1,4 +1,4 @@
-import styled from 'styled-components/native';
+import styled, { css } from 'styled-components/native';
 import {View} from 'react-native';
 
 export const Container  = styled.View`
@@ -67,5 +67,30 @@ export const CliqueMe = styled.TouchableOpacity.attrs(function(){
     margin-top: 20px;
     padding: 10px;
 `;
+
+const CommonProps = css`
+    color: red;
+    font-weight: bold;
+    text-decoration-color: blue;
+`;
+
+export const FirstText = styled.Text`
+    font-size: 18px;
+    text-decoration: underline;
+    margin-top: 15px;
+    ${CommonProps};
+    color: blue;
+`;
+
+export const Circle = styled.View`
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    margin-top: 20px;
+    background-color: yellow;
+`;
+
+
+
 
 
