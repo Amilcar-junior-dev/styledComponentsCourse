@@ -1,0 +1,18 @@
+{
+  "extends": ["stylelint-config-react-native-styled-components", "stylelint-config-recess-order"],
+  "customSyntax": "postcss-styled-syntax",
+  "rules": {
+   "order/properties-order": [
+      "height",
+      "width",
+      "justify-content",
+      "align-items",
+      "background-color",
+      "color",
+      "font-size",
+      "margin",
+      "padding"
+    ],
+    "order/properties-alphabetical-order": null
+ }
+}

@@ -1,4 +1,17 @@
 {
-    "window.zoomLevel": 2
+    "window.zoomLevel": 2,
+    "editor.codeActionsOnSave": {
+
+    "source.fixAll.stylelint": "explicit"
+    },
+    "editor.formatOnSave": true,
+    "emeraldwalk.runonsave": {
+    "commands": [
+        {
+        "match": ".*\\.ts$",
+        "cmd": "npm run stylelint:fix"
+        }
+    ]
+    }
 
 }
