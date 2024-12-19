@@ -116,7 +116,7 @@ export const ButtonComponent = styled.TouchableOpacity<ButtonComponentProps>`
     width: ${({width})=> width}%;
     justify-content: center;
     align-items: center;
-    background-color: cadetblue;
+    background-color: ${({theme})=> theme.surface};
     border-radius: ${({borderRadius})=> borderRadius ? borderRadius : 0}px;
 `;
 

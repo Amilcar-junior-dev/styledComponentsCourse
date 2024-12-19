@@ -1,14 +1,19 @@
 import React from 'react';
-import {View, Text} from 'react-native';
-import { ExempleComponent } from './components/exemple';
+import {View, useColorScheme} from 'react-native';
+import {ExempleComponent} from './components/exemple';
+import {ThemeProvider} from 'styled-components/native';
+import {themeColors} from './theme';
 
-const App = ()=> {
+const App = () => {
+  const scheme = useColorScheme();
+  const theme = themeColors[scheme ?? 'dark'];
+
   return (
-    <View
-      style={{flex:1, alignItems: 'center', justifyContent: 'center' }}
-    >
-     <ExempleComponent />
-    </View>
-  )
-}
-export default App
+    <ThemeProvider theme={theme}>
+      <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+        <ExempleComponent />
+      </View>
+    </ThemeProvider>
+  );
+};
+export default App;

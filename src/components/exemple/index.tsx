@@ -1,5 +1,5 @@
-import React from 'react';
-import {Text, TouchableOpacity, View} from 'react-native';
+import React, {useContext} from 'react';
+import {Text} from 'react-native';
 import {
   Button,
   ButtonComponent,
@@ -10,12 +10,27 @@ import {
   FirstText,
   Retangulo,
 } from './styles';
+import {ThemeConsumer, ThemeContext, useTheme} from 'styled-components/native';
 
 export const ExempleComponent = () => {
+  const hookTheme = useTheme();
+  const theme = useContext(ThemeContext);
+
   return (
     <Container>
       <ButtonComponent width={50} height={50} borderRadius={10}>
-        <Text>Enviar</Text>
+        <ThemeConsumer>
+          {theme => (
+            <Text
+              style={{
+                color: theme?.text_primary,
+                fontSize: 25,
+                fontWeight: 'bold',
+              }}>
+              Enviar
+            </Text>
+          )}
+        </ThemeConsumer>
       </ButtonComponent>
     </Container>
   );
