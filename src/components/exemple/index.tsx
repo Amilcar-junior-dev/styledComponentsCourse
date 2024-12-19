@@ -1,30 +1,22 @@
 import React from 'react';
-import { Text, TouchableOpacity, View} from 'react-native';
-import { Circle, CliqueMe, Clone, Container, FirstText, Retangulo } from './styles';
+import {Text, TouchableOpacity, View} from 'react-native';
+import {
+  Button,
+  ButtonComponent,
+  Circle,
+  CliqueMe,
+  Clone,
+  Container,
+  FirstText,
+  Retangulo,
+} from './styles';
 
-export const ExempleComponent = ()=> {
-    return (
-        <Container>
-            <Retangulo />   
-            <Clone /> 
-            <CliqueMe
-                // activeOpacity={0}
-            >
-                <Text>Clique aqui</Text>
-            </CliqueMe>  
-            <FirstText>
-                Hello Word 
-            </FirstText>
-            <Circle>
-                
-            </Circle>
-            <Circle 
-                as={TouchableOpacity} 
-                onPress={()=> {}}
-            >
-                
-            </Circle>
-        </Container>
-        
-    )
+export const ExempleComponent = () => {
+  return (
+    <Container>
+      <ButtonComponent width={50} height={50} borderRadius={10}>
+        <Text>Enviar</Text>
+      </ButtonComponent>
+    </Container>
+  );
 };

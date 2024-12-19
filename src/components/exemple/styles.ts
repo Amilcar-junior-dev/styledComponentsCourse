@@ -1,9 +1,16 @@
 import styled, { css } from 'styled-components/native';
 import {View} from 'react-native';
 
+interface ButtonComponentProps {
+    width: number;
+    height: number;
+    borderRadius?: number
+};
+
 export const Container  = styled.View`
     height: 60%;
     width: 90%;
+    justify-content: center;
     align-items: center;
     padding: 10px;
     border-width: 2px;
@@ -31,9 +38,7 @@ export const Clone = styled(Retangulo)`
     background-color: red;
     margin-left: 30px;
 `;
-export const CliqueMe2 = styled.TouchableOpacity.attrs(()=>({
-    activeOpacity: 0,
-}))`
+export const CliqueMe2 = styled.TouchableOpacity.attrs(()=>({ activeOpacity: 0}))`
     justify-content: center;
     align-items: center;
     background-color: cyan;
@@ -89,6 +94,30 @@ export const Circle = styled.View`
     background-color: yellow;
     border-radius: 100px;
     margin-top: 20px;
+`;
+
+export const Button = styled.TouchableOpacity`
+    height: 50px;
+    width: 60%;
+    background-color: cadetblue;
+    border-radius: 10px;
+`;
+
+export const ButtonComponent1 = styled.TouchableOpacity<{width:number, height: number, borderRadius?: number }>`
+    height: ${({height})=> height }px ;
+    width: ${({width})=> width}%;
+    justify-content: center;
+    align-items: center;
+    background-color: cadetblue;
+    border-radius: ${({borderRadius})=> borderRadius ? borderRadius : 0}px;
+`;
+export const ButtonComponent = styled.TouchableOpacity<ButtonComponentProps>`
+    height: ${({height})=> height }px ;
+    width: ${({width})=> width}%;
+    justify-content: center;
+    align-items: center;
+    background-color: cadetblue;
+    border-radius: ${({borderRadius})=> borderRadius ? borderRadius : 0}px;
 `;
 
 
