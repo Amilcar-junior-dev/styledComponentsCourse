@@ -5,6 +5,7 @@ import {ThemeProvider} from 'styled-components/native';
 import {themeColors} from './theme';
 import {ContainerGlobal} from './theme/globalStyle';
 import RadioButtonComponent from './components/RadioButtom';
+import ToggleComponent from './components/ToogleComponent';
 
 const App = () => {
   const scheme = useColorScheme();
@@ -32,7 +33,7 @@ const App = () => {
             justifyContent: 'center',
           }}
         >
-          {
+          {/* {
             Options.map((item, index)=> (
               <RadioButtonComponent
                 key={index}
@@ -41,8 +42,10 @@ const App = () => {
                 setOptionSelectd={(value)=> setValue(value)}
               />
             ))
-          }
-          
+          } */}
+          <ToggleComponent
+            setEnabledToggle={(enabled)=> console.log('===>>>', enabled)}
+          />
         </View>
       </ContainerGlobal>
     </ThemeProvider>
