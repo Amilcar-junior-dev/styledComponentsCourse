@@ -8,6 +8,9 @@ import RadioButtonComponent from './components/RadioButtom';
 import ToggleComponent from './components/ToogleComponent';
 import TextInputComponent from './components/TextInput';
 
+import Arrow from './assets/icons/arrow.svg';
+import DropDownComponent from './components/DropDown';
+
 const App = () => {
   const scheme = useColorScheme();
   const theme = themeColors[scheme ?? 'dark'];
@@ -24,6 +27,7 @@ const App = () => {
     'Domingo'
   ];
 
+
   return (
     <ThemeProvider theme={theme}>
       <TouchableWithoutFeedback onPress={()=> Keyboard.dismiss()}>
@@ -31,8 +35,9 @@ const App = () => {
             <View
               style={{
                 flex: 1,
-                alignItems: 'center',
-                justifyContent: 'center',
+                paddingTop:100
+                // alignItems: 'center',
+                // justifyContent: 'center',
               }}
             >
               {/* {
@@ -48,11 +53,18 @@ const App = () => {
               {/* <ToggleComponent
                 setEnabledToggle={(enabled)=> console.log('===>>>', enabled)}
               /> */}
-              <TextInputComponent
+              {/* <TextInputComponent
                 type='secondary'
                 labelName='User Name'
                 setInputValue={()=> {}}
-              />
+              /> */}
+           
+                <DropDownComponent
+                  options={Options}
+                  setDropdownValue={(value)=> console.log('value ==>>', value)}
+                />
+            
+             
             </View>
           </ContainerGlobal>
       </TouchableWithoutFeedback>
