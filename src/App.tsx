@@ -10,6 +10,7 @@ import TextInputComponent from './components/TextInput';
 
 import Arrow from './assets/icons/arrow.svg';
 import DropDownComponent from './components/DropDown';
+import SwippeComponent from './components/Swippe';
 
 const App = () => {
   const scheme = useColorScheme();
@@ -59,12 +60,11 @@ const App = () => {
                 setInputValue={()=> {}}
               /> */}
            
-                <DropDownComponent
-                  options={Options}
-                  setDropdownValue={(value)=> console.log('value ==>>', value)}
-                />
-            
-             
+              {/* <DropDownComponent
+                options={Options}
+                setDropdownValue={(value)=> console.log('value ==>>', value)}
+              /> */}
+             <SwippeComponent />
             </View>
           </ContainerGlobal>
       </TouchableWithoutFeedback>
