@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {Keyboard, TouchableWithoutFeedback, View, useColorScheme} from 'react-native';
+import {Keyboard, SafeAreaView, TouchableWithoutFeedback, View, useColorScheme} from 'react-native';
 import {ExempleComponent} from './components/exemple';
 import {ThemeProvider} from 'styled-components/native';
 import {themeColors} from './theme';
@@ -11,6 +11,8 @@ import TextInputComponent from './components/TextInput';
 import Arrow from './assets/icons/arrow.svg';
 import DropDownComponent from './components/DropDown';
 import SwippeComponent from './components/Swippe';
+import { NavigationContainer } from '@react-navigation/native';
+import Routes from './Routes/Routes';
 
 const App = () => {
   const scheme = useColorScheme();
@@ -31,43 +33,11 @@ const App = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <TouchableWithoutFeedback onPress={()=> Keyboard.dismiss()}>
-          <ContainerGlobal>
-            <View
-              style={{
-                flex: 1,
-                paddingTop:100
-                // alignItems: 'center',
-                // justifyContent: 'center',
-              }}
-            >
-              {/* {
-                Options.map((item, index)=> (
-                  <RadioButtonComponent
-                    key={index}
-                    option={item}
-                    check={value}
-                    setOptionSelectd={(value)=> setValue(value)}
-                  />
-                ))
-              } */}
-              {/* <ToggleComponent
-                setEnabledToggle={(enabled)=> console.log('===>>>', enabled)}
-              /> */}
-              {/* <TextInputComponent
-                type='secondary'
-                labelName='User Name'
-                setInputValue={()=> {}}
-              /> */}
-           
-              {/* <DropDownComponent
-                options={Options}
-                setDropdownValue={(value)=> console.log('value ==>>', value)}
-              /> */}
-             <SwippeComponent />
-            </View>
-          </ContainerGlobal>
-      </TouchableWithoutFeedback>
+     <SafeAreaView style={{flex:1}}>
+      <NavigationContainer>
+        <Routes />
+      </NavigationContainer>
+     </SafeAreaView>
     </ThemeProvider>
   );
 };
