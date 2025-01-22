@@ -1,10 +1,12 @@
 import React from 'react';
 import {View, Text} from 'react-native';
+import { ContainerProfile } from './styles';
+import SnippetComponent from '../../components/userSnippet';
 const Profile: React.FC = ()=> {
     return (
-        <View> 
-            <Text> Page Profile</Text>
-        </View>
+        <ContainerProfile> 
+            <SnippetComponent/>
+        </ContainerProfile>
     )
 };
 
