@@ -1,10 +1,25 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, FlatList} from 'react-native';
 import { ContainerButtons, ContainerProfile, ContainerSkills, HeaderInfo, HeaderText, TextGeneric, TitleSkillContent } from './styles';
 import SnippetComponent from '../../components/userSnippet';
 import ButtomComponent from '../../components/Buttom';
 import SwippeComponent from '../../components/Swippe';
+import MedalSkillComponent from '../../components/MedallSkills';
+import { MedalSkillComponentProps } from '../../components/MedallSkills/Models';
 const Profile: React.FC = ()=> {
+
+    const Medals = [
+        {id: '0', icon: 'ReactNative', label: 'React-Native' },
+        {id: '1', icon: 'JavaScript', label: 'JavaScript' },
+        {id: '2', icon: 'StyledComponents', label: 'Styled-Components' },
+        {id: '3', icon: 'Tailwind', label: 'Tailwind' },
+        {id: '4', icon: 'Firebase', label: 'Firebase' },
+        {id: '5', icon: 'AWS', label: 'AWS' },
+        {id: '6', icon: 'HTML', label: 'HTML' },
+        {id: '7', icon: 'CSS', label: 'CSS' },
+        {id: '8', icon: 'TypeScript', label: 'TypeScript' },
+    ];
+
     return (
         <ContainerProfile> 
             <SnippetComponent/>
@@ -28,6 +43,15 @@ const Profile: React.FC = ()=> {
             </ContainerButtons>
             <ContainerSkills>
                 <TitleSkillContent> Skills </TitleSkillContent>
+                <FlatList 
+                    data={Medals}
+                    horizontal
+                    keyExtractor={(item)=> item.id}
+                    renderItem={({item, index})=> (
+                        <MedalSkillComponent icon={item?.icon as MedalSkillComponentProps['icon']} label={item?.label} />
+                    )}
+                />
+               
                 <TitleSkillContent> Sobre mim: </TitleSkillContent>
                 <TextGeneric bold> Nome completo: <TextGeneric bold={false}> Junior Oliveira </TextGeneric> </TextGeneric>
                 <TextGeneric bold> Endereço: <TextGeneric bold={false}> Rua dos desenvolvedor, n 20 </TextGeneric> </TextGeneric>
