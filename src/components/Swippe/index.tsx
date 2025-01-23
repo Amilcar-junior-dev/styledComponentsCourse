@@ -3,12 +3,16 @@ import {Animated, Linking, PanResponder} from 'react-native';
 import { Swippe, SwippeContainer, TextLabelSwippe } from './styles';
 import Phone from '../../assets/icons/phone.svg';
 import { ThemeConsumer } from 'styled-components/native';
+import { SwippeComponentProps } from './Models';
 
-const SwippeComponent = ()=> {
+const SwippeComponent:React.FC<SwippeComponentProps> = ({
+    label,
+    width,
+})=> {
 
     const animatedSwippeValue = useRef(new Animated.Value(0)).current;
 
-    const containerWidth = 300;
+    const containerWidth = width;
     const limit = containerWidth
 
     const openPhone = ()=> {
@@ -52,9 +56,9 @@ const SwippeComponent = ()=> {
         elevation: 5
     }
     return (
-        <SwippeContainer style={shadow} >
+        <SwippeContainer style={shadow} width={width} >
             <TextLabelSwippe>
-                Contate-me
+                {label}
             </TextLabelSwippe>
             <Swippe as={Animated.View}
                 style={{

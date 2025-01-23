@@ -29,3 +29,27 @@ export const ContainerButtons = styled.View`
     padding: 15px 10px;
     flex-wrap: wrap;
 `;
+
+export const ContainerSkills = styled.ScrollView`
+    flex:1;
+    width: 100%;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    background-color: ${({theme})=> theme.tab_bar};
+`;
+
+export const TitleSkillContent = styled.Text`
+    color: ${({theme})=> theme.surface_light};
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    padding: 0px 10px;
+`;
+
+export const TextGeneric = styled.Text<{bold:boolean}>`
+    color: ${({theme})=> theme.surface_light};
+    font-size: 14px;
+    padding: 0px 10px;
+    font-weight: ${({bold})=> bold ? 'bold' : '400'};
+    margin-top: 5px;
+`;

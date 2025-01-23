@@ -1,8 +1,8 @@
 import styled from 'styled-components/native';
 
-export const SwippeContainer = styled.View`
+export const SwippeContainer = styled.View<{width:number}>`
     height: 50px;
-    width: 300px;
+    width:${({width})=> width}px;
     justify-content: center;
     align-items: center;
     background-color: ${({theme})=> theme.surface_light};
