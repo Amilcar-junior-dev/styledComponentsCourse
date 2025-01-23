@@ -2,6 +2,7 @@ import React from 'react';
 import {View, Text} from 'react-native';
 import { ContainerButtons, ContainerProfile, HeaderInfo, HeaderText } from './styles';
 import SnippetComponent from '../../components/userSnippet';
+import ButtomComponent from '../../components/Buttom';
 const Profile: React.FC = ()=> {
     return (
         <ContainerProfile> 
@@ -16,7 +17,12 @@ const Profile: React.FC = ()=> {
                 </HeaderText>
             </HeaderInfo>
             <ContainerButtons>
-                
+                <ButtomComponent icon='Email' label='E-mail'/>
+                <ButtomComponent icon='Linkedin' label='Linkedin'/>
+                <ButtomComponent icon='GitHub'/>
+                <ButtomComponent icon='GitLab'/>
+                <ButtomComponent icon='Instagram'/>
+                <ButtomComponent icon='Facebook'/>
             </ContainerButtons>
         </ContainerProfile>
     )
