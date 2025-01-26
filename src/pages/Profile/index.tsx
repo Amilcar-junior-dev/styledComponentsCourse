@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {View, Text, FlatList} from 'react-native';
 import { ContainerButtons, ContainerProfile, ContainerSkills, HeaderInfo, HeaderText, TextGeneric, TitleSkillContent } from './styles';
 import SnippetComponent from '../../components/userSnippet';
@@ -7,6 +7,8 @@ import SwippeComponent from '../../components/Swippe';
 import MedalSkillComponent from '../../components/MedallSkills';
 import { MedalSkillComponentProps } from '../../components/MedallSkills/Models';
 const Profile: React.FC = ()=> {
+
+    const [ actionActiveIndex, setActionActiveIndex] =  useState(0);
 
     const Medals = [
         {id: '0', icon: 'ReactNative', label: 'React-Native' },
@@ -48,7 +50,12 @@ const Profile: React.FC = ()=> {
                     horizontal
                     keyExtractor={(item)=> item.id}
                     renderItem={({item, index})=> (
-                        <MedalSkillComponent icon={item?.icon as MedalSkillComponentProps['icon']} label={item?.label} />
+                        <MedalSkillComponent 
+                            onAnimationEnd={()=> {setActionActiveIndex((prevState)=> (prevState + 1) )}}
+                            currentIndex={index === actionActiveIndex}
+                            icon={item?.icon as MedalSkillComponentProps['icon']} 
+                            label={item?.label} 
+                        />
                     )}
                 />
                

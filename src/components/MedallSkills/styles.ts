@@ -10,7 +10,7 @@ export const ContainerMedal = styled.View`
     width: 70px;
     justify-content: center;
     align-items: center;
-    background-color: ${({theme})=> theme.surface_light};
+    background-color: ${({theme})=> theme.surface};
     border-radius: 100%;
 `; 
 export const MedalLabel = styled.Text`

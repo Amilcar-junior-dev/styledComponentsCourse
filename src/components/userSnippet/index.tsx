@@ -20,7 +20,7 @@ const SnippetComponent: React.FC = ()=> {
                 easing: Easing.linear
             })
         )
-        spinAnimated.start();
+        spinAnimated.stop();
         return  ()=> spinAnimated.stop()
     },[rotation])
 

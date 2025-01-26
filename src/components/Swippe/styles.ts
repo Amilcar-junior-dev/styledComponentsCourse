@@ -5,7 +5,7 @@ export const SwippeContainer = styled.View<{width:number}>`
     width:${({width})=> width}px;
     justify-content: center;
     align-items: center;
-    background-color: ${({theme})=> theme.surface_light};
+    background-color: ${({theme})=> theme.surface};
     border-radius: 30px;
     align-self: center;
     position: relative;

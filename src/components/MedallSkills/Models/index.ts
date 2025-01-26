@@ -9,6 +9,7 @@ export interface MedalSkillComponentProps {
     | 'CSS'
     | 'TypeScript';
     label: string;
-    
+    currentIndex: boolean;
+    onAnimationEnd: ()=> void | number | null;
 
 }
