@@ -6,10 +6,11 @@ import LinearGradient from 'react-native-linear-gradient';
 
 import ImageTest from '../../assets/images/FoodieFinder.png';
 import Arrow from '../../assets/icons/arrow.svg';
+import { CardComponentProps } from './Models';
 
 
 
-const CardComponent:React.FC = ()=> {
+const CardComponent:React.FC<CardComponentProps> = ({item})=> {
 
     const [ dropdown, setDropdown] = useState(false);
     const dropdownAnimated = useRef( new Animated.Value(0)).current;
@@ -48,7 +49,7 @@ const CardComponent:React.FC = ()=> {
                 colors={["#345F85", "#0F1B25"]}
             >
                 <ContainerImage 
-                    source={ImageTest}
+                    source={item?.image}
                 />
 
                 <Animated.View style={{height: heigthAnimated}}>
@@ -64,14 +65,14 @@ const CardComponent:React.FC = ()=> {
                             <Arrow  width={15} height={15} color={'#ffffff'}/>
                         </Animated.View>
                         <CardText fs={16} bold>
-                              FoodieFinder
+                              {item?.title}
                         </CardText>
                         {
                             dropdown &&
                             <CardText fs={12} bold={false}>
-                                {text.length > 40 
-                                    ? text.slice(0, 30) + '...'
-                                    : text
+                                {item?.description?.length > 40 
+                                    ? item?.description?.slice(0, 30) + '...'
+                                    : item?.description
                                 
                                 }
                             </CardText>

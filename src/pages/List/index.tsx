@@ -49,8 +49,19 @@ const List: React.FC = ()=> {
                 </ContainerSearch>
                 <FlatList
                     data={mockDataBase}
+                    numColumns={2}
+                    showsVerticalScrollIndicator={false}
                     keyExtractor={(_, index)=> index.toString()}
-                    renderItem={()=> <CardComponent />}
+                    ItemSeparatorComponent={()=> <View style={{height: 30}}/>}
+                    renderItem={({item})=> <CardComponent item={item}/>}
+                    contentContainerStyle={{
+                        width:'100%',
+                        marginTop: 50,
+                        alignContent: 'space-between'
+                    }}
+                    columnWrapperStyle={{
+                        justifyContent: 'space-around'
+                    }}
                 />
                 
             </ContainerView>
