@@ -1,9 +1,14 @@
 import React, { useContext, useState } from 'react';
-import {View, Text, TextInput} from 'react-native';
+import {View, Text, TextInput, FlatList} from 'react-native';
 
 import LinearGradient from 'react-native-linear-gradient';
 import { ThemeContext } from 'styled-components/native';
 import { ContainerInput, ContainerSearch, ContainerView } from './styles';
+
+import Search from '../../assets/icons/Search.svg';
+
+import {mockDataBase} from '../../dataBase';
+import CardComponent from '../../components/Cards';
 
 const List: React.FC = ()=> {
     const Theme = useContext(ThemeContext);
@@ -40,7 +45,13 @@ const List: React.FC = ()=> {
 
                         />
                     </ContainerInput>
+                    <Search width={30} height={30} color={Theme?.text_primary}/>
                 </ContainerSearch>
+                <FlatList
+                    data={mockDataBase}
+                    keyExtractor={(_, index)=> index.toString()}
+                    renderItem={()=> <CardComponent />}
+                />
                 
             </ContainerView>
         </LinearGradient>
