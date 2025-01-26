@@ -14,6 +14,7 @@ export const ContainerImage = styled.Image`
 export const ContentInfo = styled.TouchableOpacity`
     width: 100%;
     overflow: hidden;
+    padding: 10px;
 `;
 
 export const CardText = styled.Text<{fs: number, bold: boolean}>`
