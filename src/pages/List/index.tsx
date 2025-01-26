@@ -1,11 +1,14 @@
-import React, { useContext } from 'react';
-import {View, Text} from 'react-native';
+import React, { useContext, useState } from 'react';
+import {View, Text, TextInput} from 'react-native';
 
 import LinearGradient from 'react-native-linear-gradient';
 import { ThemeContext } from 'styled-components/native';
+import { ContainerInput, ContainerSearch, ContainerView } from './styles';
 
 const List: React.FC = ()=> {
     const Theme = useContext(ThemeContext);
+
+    const [ value, setValue] = useState('');
 
     const colors = [
         Theme?.background!,
@@ -25,7 +28,21 @@ const List: React.FC = ()=> {
             start={{x:-1 ,y: -1.5 }}
             end={{x: 1, y: 1 }}
         > 
-            <Text> Page List</Text>
+            <ContainerView>
+                <ContainerSearch>
+                    <ContainerInput>
+                        <TextInput
+                            style={{width:'100%', height: '100%', color:Theme?.surface_light }}
+                            placeholder='Digite aqui...'
+                            placeholderTextColor={Theme?.surface_light}
+                            value={value}
+                            onChangeText={(text)=> setValue(text)}
+
+                        />
+                    </ContainerInput>
+                </ContainerSearch>
+                
+            </ContainerView>
         </LinearGradient>
     )
 };
