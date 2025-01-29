@@ -8,9 +8,15 @@ import ImageTest from '../../assets/images/FoodieFinder.png';
 import Arrow from '../../assets/icons/arrow.svg';
 import { CardComponentProps } from './Models';
 
+import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { StackParamsList } from '../../@types';
 
+type ListNavigationProp = StackNavigationProp<StackParamsList, 'MainTabs'>
 
 const CardComponent:React.FC<CardComponentProps> = ({item})=> {
+
+     const Navigation = useNavigation<ListNavigationProp>()
 
     const [ dropdown, setDropdown] = useState(false);
     const dropdownAnimated = useRef( new Animated.Value(0)).current;
@@ -43,7 +49,7 @@ const CardComponent:React.FC<CardComponentProps> = ({item})=> {
 
 
     return (
-        <ContainerCard>
+        <ContainerCard onPress={()=> Navigation.navigate('Details', {item: item})}>
             <LinearGradient
                 style={{borderRadius: 10}}
                 colors={["#345F85", "#0F1B25"]}

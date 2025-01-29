@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import {View, Text, TextInput, FlatList} from 'react-native';
 
 import LinearGradient from 'react-native-linear-gradient';
@@ -9,11 +9,24 @@ import Search from '../../assets/icons/Search.svg';
 
 import {mockDataBase} from '../../dataBase';
 import CardComponent from '../../components/Cards';
+import { CardComponentProps } from '../../components/Cards/Models';
+
+
 
 const List: React.FC = ()=> {
+
+   
+
     const Theme = useContext(ThemeContext);
 
     const [ value, setValue] = useState('');
+    const [ cardList, setCardList] = useState<CardComponentProps['item'][]>([]);
+
+    useEffect(()=>{
+        const search = mockDataBase.filter((card)=> card.title.includes(value))
+        setCardList(search)
+
+    },[value])
 
     const colors = [
         Theme?.background!,
@@ -48,7 +61,7 @@ const List: React.FC = ()=> {
                     <Search width={30} height={30} color={Theme?.text_primary}/>
                 </ContainerSearch>
                 <FlatList
-                    data={mockDataBase}
+                    data={cardList}
                     numColumns={2}
                     showsVerticalScrollIndicator={false}
                     keyExtractor={(_, index)=> index.toString()}
