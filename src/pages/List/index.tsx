@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import {View, Text, TextInput, FlatList} from 'react-native';
+import {View, Text, TextInput, FlatList, SafeAreaView} from 'react-native';
 
 import LinearGradient from 'react-native-linear-gradient';
 import { ThemeContext } from 'styled-components/native';
