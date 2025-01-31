@@ -12,7 +12,7 @@ export const SwippeContainer = styled.View<{width:number}>`
 `;
 export const TextLabelSwippe = styled.Text`
     color: ${({theme})=> theme.icon_primary};
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
 `;
 export const Swippe = styled.View`

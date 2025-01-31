@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import {Text} from 'react-native';
+import {Dimensions, PixelRatio, Text, useWindowDimensions} from 'react-native';
 import {
   Button,
   ButtonComponent,
@@ -7,31 +7,38 @@ import {
   CliqueMe,
   Clone,
   Container,
+  ContainerButton,
   FirstText,
   Retangulo,
+  TextButton,
 } from './styles';
 import {ThemeConsumer, ThemeContext, useTheme} from 'styled-components/native';
+import LinearGradient from 'react-native-linear-gradient';
 
 export const ExempleComponent = () => {
-  const hookTheme = useTheme();
-  const theme = useContext(ThemeContext);
+
+  const Screen = Dimensions.get('window');
+  const Pixel = PixelRatio.getFontScale();
+
+  const colors = ['#084BE8', '#B1C4FF', '#4DBAF6'];
+
 
   return (
-    <Container>
-      <ButtonComponent width={50} height={50} borderRadius={10}>
-        <ThemeConsumer>
-          {theme => (
-            <Text
-              style={{
-                color: theme?.text_primary,
-                fontSize: 25,
-                fontWeight: 'bold',
-              }}>
-              Enviar
-            </Text>
-          )}
-        </ThemeConsumer>
-      </ButtonComponent>
-    </Container>
+    <ContainerButton ScreenWindow={Screen.width * 0.5}>
+      <LinearGradient
+        colors={colors}
+        style={{
+          height: '100%',
+          width: '100%',
+          borderRadius: 20,
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <TextButton fontScale={Pixel}>
+           Enviar
+        </TextButton>
+      </LinearGradient>
+    </ContainerButton>
   );
 };

@@ -10,6 +10,7 @@ import Search from '../../assets/icons/Search.svg';
 import {mockDataBase} from '../../dataBase';
 import CardComponent from '../../components/Cards';
 import { CardComponentProps } from '../../components/Cards/Models';
+import GradientButtom from '../../components/GradientButtonExemple';
 
 
 
@@ -60,6 +61,7 @@ const List: React.FC = ()=> {
                     </ContainerInput>
                     <Search width={30} height={30} color={Theme?.text_primary}/>
                 </ContainerSearch>
+               
                 <FlatList
                     data={cardList}
                     numColumns={2}

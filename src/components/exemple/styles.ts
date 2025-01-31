@@ -120,6 +120,17 @@ export const ButtonComponent = styled.TouchableOpacity<ButtonComponentProps>`
     border-radius: ${({borderRadius})=> borderRadius ? borderRadius : 0}px;
 `;
 
+export const ContainerButton = styled.TouchableOpacity<{ScreenWindow:number}>`
+   width: ${({ScreenWindow})=>ScreenWindow}px;
+   height: 50px;
+`;
+
+export const TextButton = styled.Text<{fontScale: number}>`
+    color: white;
+    font-size:${({fontScale})=>fontScale * 20}px; ;
+    font-weight: bold;
+`;
+
 
 
 

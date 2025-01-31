@@ -8,6 +8,7 @@ import MedalSkillComponent from '../../components/MedallSkills';
 import { MedalSkillComponentProps } from '../../components/MedallSkills/Models';
 import LinearGradient from 'react-native-linear-gradient';
 import { ThemeContext } from 'styled-components/native';
+import { ExempleComponent } from '../../components/exemple';
 
 const Profile: React.FC = ()=> {
 
